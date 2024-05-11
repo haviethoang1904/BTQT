@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <h2>List of Employees</h2>
+    <table border="1">
+        <thead>
+            <tr>
+                <th>Employee ID</th>
+                <th>Full Name</th>
+                <th>Monthly Salary (VND)</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for employee in office_employees %}
+                <tr>
+                    <td>{{ employee.employee_id }}</td>
+                    <td>{{ employee.full_name }}</td>
+                    <td>{{ employee.monthly_salary }}</td>
+                </tr>
+            {% endfor %}
+            {% for employee in sales_employees %}
+                <tr>
+                    <td>{{ employee.employee_id }}</td>
+                    <td>{{ employee.full_name }}</td>
+                    <td>{{ employee.monthly_salary }}</td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+{% endblock %}
